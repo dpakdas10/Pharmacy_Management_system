@@ -36,20 +36,7 @@ npm install
 npm nodemon index.js
 ```
 
-5. Open your web browser and navigate to http://localhost:8080 to access the application.
-
-## Usage
-1. Login using your registered credentials.
-2. Fill out the patient detail form.
-3. Search for drugs needed by the patient and check availability.
-4. Add medicines to the bill as per requirements.
-5. Generate the bill and complete the transaction.
-
-## Video Demo
-
-Check out a demo of the Pharmacy Management System in action:
-
-https://github.com/Anupmqr/PharmacyManagementSystem/assets/122713481/3d7535da-02aa-4208-94b2-2988d1642011
+5. Open your web browser and navigate to http://localhost:8070 to access the application.
 
 
 
