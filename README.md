@@ -5,6 +5,7 @@ The Pharmacy Management System is a comprehensive platform developed with Node.j
 
 **Features**
 
+
 **Admin Login**: Secure access for registered pharmacists through a login feature.
 
 **Patient Detail Form**: A user-friendly form for capturing patient details, ensuring organized and efficient record-keeping.
@@ -17,6 +18,8 @@ The Pharmacy Management System is a comprehensive platform developed with Node.j
 
 
 **Technologies Used**
+
+
 **Node.js**: A JavaScript runtime environment for handling server-side operations.
 
 **Express.js**: A web application framework built on Node.js, streamlining backend development.
