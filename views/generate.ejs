@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <title>Generate Bill</title>
+    <link rel="stylesheet" href="/generatebill.css">
+    <link rel="icon" href="/logo.png">
+</head>
+<body>
+    <div class="img-container">
+        <img src="/medstore.png">
+    </div>
+   <% if(result){ %> 
+    <div class="container">
+    <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <img src="/logo.png" class="card-img">
+                <div class="card-img-overlay">
+                    <div class="card-body">
+                        <div class="invoice-title">
+                            <h4 class="float-end font-size-15">Invoice #DS0204 <span class="badge bg-success font-size-12 ms-2">Bill</span></h4>
+                            <div class="mb-4">
+                               <h2 class="mb-1 text-muted"><%=result1[0].Name %></h2>
+                            </div>
+                            <div class="text-muted">
+                                <p class="mb-1"><%= result1[0].Location %></p>
+                                <p class="mb-1"><i class="uil uil-envelope-alt me-1"></i><%=result1[0].Email %></p>
+                                <p><i class="uil uil-phone me-1"></i><%=result1[0].Phone_Number %></p>
+                            </div>
+                        </div>
+    
+                        <hr class="my-4">
+    
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="text-muted">
+                                    <h5 class="font-size-16 mb-3">Billed To:</h5>
+                                    <h5 class="font-size-15 mb-2"><%=p_name%></h5>
+                                    <p class="mb-1"><%=address%></p>
+                                    <p><%=phone_number%></p>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-sm-6">
+                                <div class="text-muted text-sm-end">
+                                    <div>
+                                        <h5 class="font-size-15 mb-1">Invoice No:</h5>
+                                        <p>#DZ0112</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h5 class="font-size-15 mb-1">Invoice Date:</h5>
+                                        <p><%=new Date().toDateString()%></p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h5 class="font-size-15 mb-1">Order No:</h5>
+                                        <p>#1123456</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        
+                        <div class="py-2">
+                            <h5 class="font-size-15">Order Summary</h5>
+    
+                            <div class="table-responsive">
+                                <table class="table align-middle table-nowrap table-centered mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 70px;">No.</th>
+                                            <th>Item</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th class="text-end" style="width: 120px;">Total</th>
+                                        </tr>
+                                    </thead><!-- end thead -->
+                                    <% let c=1; %>
+                                    <tbody>
+                                        <% let totalPrice = 0; %>
+                                        <%result.forEach(medicine => { %>
+                                        <tr>
+                                            <th scope="row"><%=c++ %></th>
+                                            <td>
+                                                <div>
+                                                    <h5 class="text-truncate font-size-14 mb-1"><%= medicine.Medicine_Name %></h5>
+                                                    <!-- <p class="text-muted mb-0">Watch, Black</p> -->
+                                                </div>
+                                            </td>
+                                            <td> &#8377;  <%=medicine.Price%></td>
+                                            <td><%=medicine.Quantity%></td>
+                                            <td class="text-end">&#8377; <%=medicine.Quantity * medicine.Price%></td>
+                                            <% totalPrice += medicine.Price * medicine.Quantity; %>
+                                        </tr>
+                                        <% }); %> 
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="4" class="text-end">Sub Total</th>
+                                            <td id="subtotal" class="text-end">&#8377; <%=totalPrice %></td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="4" class="border-0 text-end">
+                                                Discount : &nbsp;&nbsp;-&#8377;</th>
+                                            <td class="border-0 text-end"><input id="discount" onkeypress="handleKeyPress(event)"></td>
+                                        </tr>
+                                        <!-- end tr -->
+                                        <tr>
+                                            <th scope="row" colspan="4" class="border-0 text-end">Total</th>
+                                            <td class="border-0 text-end"><h4 id="totalAmount" class="m-0 fw-semibold">&#8377; <%=totalPrice %></h4></td>
+                                        </tr>
+                                        <!-- end tr -->
+                                    </tbody><!-- end tbody -->
+                                </table><!-- end table -->
+                            </div><!-- end table responsive -->
+                            <div class="d-print-none mt-4">
+                                <div class="float-end">
+                                    <a href="javascript:window.print()" class="btn btn-success me-1"><i class="fa fa-print"></i></a>
+                                    <a href="/patients" class="btn btn-primary w-md">Done</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div><!-- end col -->
+        </div>
+</div>
+</div>
+    <% } %>
+    <script src="/discount.js"></script>
+</body>
+</html>

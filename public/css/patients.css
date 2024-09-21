@@ -1,0 +1,32 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+form{
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 500px;
+    background-image: url(logo_blur.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 50%;
+   }
+
+   .img-container{
+    margin-top: 1rem;
+    margin-left: 25rem;
+    margin-bottom: 1rem;
+   }

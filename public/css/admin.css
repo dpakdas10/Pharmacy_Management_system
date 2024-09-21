@@ -1,0 +1,240 @@
+body{
+    background-color: rgb(227,235,238);
+    margin: 0;
+    padding: 0;
+    font-family: Karla,sans-serif;
+}
+.main{
+    padding: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 60vh;
+    width: 90vh;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.logo{
+    height: 50px;
+    width: 52px;
+    position: relative;
+    top: 20px;
+    border: 5px solid rgb(139,194,74);
+    border-radius: 50%;
+    background-color: rgb(43,102,171);
+    margin-right: 12px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgb(227,235,238);
+    z-index: 90;
+    height: 100px;
+    width: 1250px;
+    backdrop-filter: blur(24px);
+}
+
+button, .login{
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 45px;
+    border: none;
+    background-color: rgb(43,102,171);
+    color: white;
+    cursor: pointer;
+}
+
+.login{
+    position: fixed;
+    left: 1200px;
+    top: 50px;
+    z-index: 90;
+}
+
+h1{
+    font-size: 80px;
+    font-weight: 400;
+    margin:0px;
+}
+
+.container{
+    position: relative;
+    top: 180px;
+    left: 100px;
+    margin:0px;
+}
+
+.learn{
+    position: relative;
+    top: 220px;
+    left: 100px;
+    height: 60px;
+    width: 120px;
+    font-size: 18px;
+}
+
+p{
+    font-size: 25px;
+}
+
+.pic{
+    position: relative;
+    top: -180px;
+    left: 550px;
+}
+
+.design{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    top: -800px;
+    left: 550px;
+    z-index: -1;
+  }
+  
+  .box {
+    width: 307px;
+    height: 307px;
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 50%;
+      transform: scale(1.42);
+    }
+  }
+  
+  .spin-container {
+    width: 100%;
+    height: 100%;
+    animation: spin 12s ease-in-out infinite alternate;
+    position: relative;
+  }
+  
+  .shape {
+    width: 100%;
+    height: 100%;
+    transition: border-radius 1s ease-out;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 8s ease-in-out infinite both alternate;
+    position: absolute;
+    overflow: hidden;
+    z-index: 5;
+  }
+  
+  .bd {
+    width: 142%;
+    height: 142%;
+    position: absolute;
+    left: -21%;
+    top: -21%;
+    background: #005;
+    background-image: linear-gradient(45deg, purple 0%, pink 100%);
+    background-size: 100%;
+    background-position: center center;
+    display: flex;
+    color: #003;
+    font-size: 5vw;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    animation: spin 12s ease-in-out infinite alternate-reverse;
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  @keyframes morph {
+    0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
+    100% {border-radius: 40% 60%;} 
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  .medicine{
+    position: relative;
+    top: 4px;
+  }
+
+  .doct{
+    position: absolute;
+    left: 400px;
+    height: 300px;
+  }
+
+  .med1{
+    position: relative;
+    height: 300px;
+    left: 253px;
+    top: -70px;
+  }
+
+  .footer{
+    background-color: rgb(43,102,171);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2{
+    margin:0;
+    text-align: center;
+    padding: 20px;
+    font-size: 70px;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .contact{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact a{
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 40px;
+    color: black;
+    background-color: rgb(139,194,74);
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright{
+    padding: 0 0 16px;
+    color: #ccc;
+    text-align: center;
+    font-weight: 200;
+    line-height: 1.5rem;
+}
+
+.contact a:hover{
+    background-color: rgb(155, 211, 91);
+}
